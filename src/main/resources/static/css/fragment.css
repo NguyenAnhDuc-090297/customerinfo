@@ -1,0 +1,44 @@
+.navigation {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    background: #4d43d3;
+    height: 70vh;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 1px;
+    color: #d4d3dd;
+    white-space: nowrap;
+}
+
+.navigation ul li a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    background: #4d43d3;
+}
+
+.navigation ul li a span.icon {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.navigation ul li a span.title {
+    display: inline-block;
+}
+
+.navigation ul li a:hover,
+.navigation ul li a.active {
+    background: #776fe7;
+    color: #fff;
+}

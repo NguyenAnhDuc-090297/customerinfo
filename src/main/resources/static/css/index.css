@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e1ecf2;
+}
+
+.wrapper {
+    margin: 10px;
+}
+
+.wrapper .user-view {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*.wrapper .user-view .pie-chart {*/
+/*    background: #fff;*/
+/*    margin-bottom: 10px;*/
+/*    padding: 10px;*/
+/*    border-radius: 10px;*/
+/*}*/

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Infomation</title>
+
+    <link rel="stylesheet" th:href="@{/css/fragment.css}">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+
+    <script src="https://kit.fontawesome.com/9eead257ec.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div th:replace="~{/fragment.html :: sideMenu}">
+        </div>
+
+        <div class="user-view">
+            <div class="pie-chart" id="chart">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // add active class in selected list item
+        let list = document.querySelectorAll('.link');
+        for(let i = 0; i < list.length; i++) {
+            list[i].onclick = function() {
+                let j = 0;
+                while (j < list.length) {
+                    list[j].className = 'link';
+                    j++;
+                }
+                list[i].className = 'link active';
+            }
+        }
+    </script>
+</body>
+</html>
