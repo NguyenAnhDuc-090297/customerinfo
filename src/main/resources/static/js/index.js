@@ -7,7 +7,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 
     // Create the data table
-    var data = new google.visualization.DataTable();
+    let data = new google.visualization.DataTable();
     data.addColumn('string', 'Organization');
     data.addColumn('number', 'Member');
     data.addRows([
@@ -19,13 +19,13 @@ function drawChart() {
     ]);
 
     // Set the chart options
-    var options = {
+    const options = {
         'title': 'Number of customers by Organization',
         'width': '100%',
         'height': '600'
     };
 
     // Instantiate and draw the chart, passing in some options
-    var chart = new google.visualization.PieChart(document.getElementById('chart'));
+    let chart = new google.visualization.PieChart(document.getElementById('chart'));
     chart.draw(data, options);
 }

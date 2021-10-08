@@ -9,12 +9,20 @@ public class Organization {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private int id;
 
+    @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "full_name", nullable = false)
+    private String fullName;
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "organization", cascade = CascadeType.ALL)
-    private List<Customer> customers;
+    private List<Customer> employees;
+
+    public Organization() {
+    }
 
     public String getName() {
         return name;
@@ -25,10 +33,18 @@ public class Organization {
     }
 
     public List<Customer> getCustomers() {
-        return customers;
+        return employees;
     }
 
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
+    public void setCustomers(List<Customer> employees) {
+        this.employees = employees;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

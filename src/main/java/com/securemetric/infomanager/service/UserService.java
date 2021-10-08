@@ -14,8 +14,4 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public boolean checkRoles(){
-
-        return false;
-    }
 }
