@@ -24,7 +24,7 @@ public class OrganizationController {
         this.organizationService = organizationService;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public String getOrganization(Model model){
         List<Organization> organizationList = organizationService.getAllOrganization();
         model.addAttribute("organizations", organizationList);

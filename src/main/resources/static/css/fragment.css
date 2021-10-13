@@ -17,6 +17,7 @@
     margin-bottom: 1px;
     color: #d4d3dd;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .navigation ul li a:before {

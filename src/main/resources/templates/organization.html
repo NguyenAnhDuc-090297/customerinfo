@@ -5,70 +5,76 @@
     <title>Organization</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
     <link rel="stylesheet" th:href="@{/css/fragment.css}">
+    <link rel="stylesheet" th:href="@{/css/organization.css}">
     <link rel="icon" th:href="@{/image/favicon.png}">
 
+    <script src="https://kit.fontawesome.com/9eead257ec.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" th:src="@{/js/organization.js}"></script>
 </head>
 <body>
-<div class="wrapper">
-    <div th:replace="~{/fragment.html :: sideMenu}">
-    </div>
-
-    <div class="user-view">
-        <div class="add-organization">
-            <button class="btn btn-primary" type="button">Add Organization</button>
+    <div class="wrapper">
+        <div th:replace="~{/fragment.html :: sideMenu}">
         </div>
 
-        <!-- Modal Add Organization -->
-        <div class="modal fade" id="modal-add-organization" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Add Organization</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form th:action="@{/add-organization}" method="post" id="form-add">
-                            <div class="form-group">
-                                <label class="col-form-label">Name</label>
-                                <input type="text" class="form-control" id="nameAdd"
-                                       name="name" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label class="col-form-label">Full Name</label>
-                                <input type="text" class="form-control" id="descriptionAdd"
-                                       name="description" required="required">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" id="btn-add-cancel">Cancel</button>
-                        <button class="btn btn-primary" type="submit" id="btn-add-org">Add Organization</button>
+        <div class="user-view">
+            <div class="add-organization">
+                <button class="btn btn-primary" id="btn-add-modal" type="button">Add Organization</button>
+            </div>
+
+            <!-- Modal Add Organization -->
+            <div class="modal fade" id="modal-add-organization" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Organization</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="form-add">
+                                <div class="form-group">
+                                    <label class="col-form-label">Name</label>
+                                    <input type="text" class="form-control" id="nameOrg"
+                                           name="name" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullNameOrg"
+                                           name="fullName" required="required">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" id="btn-add-cancel">Cancel</button>
+                            <button class="btn btn-primary" type="submit" id="btn-add-org">Add Organization</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="organization-view" style="overflow-x:auto">
-            <table class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Organization</th>
-                    <th scope="col">Full name</th>
-                </tr>
-                </thead>
-                <!--            <tbody>-->
-                <!--                <tr th:each="">-->
-
-                <!--                </tr>-->
-                <!--            </tbody>-->
-            </table>
+            <div class="organization-view" style="overflow-x:auto">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Organization</th>
+                        <th scope="col">Full name</th>
+                    </tr>
+                    </thead>
+                        <tbody>
+                            <tr th:each="organization : ${organizations}">
+                                <td th:text="${organization.id}"></td>
+                                <td th:text="${organization.name}"></td>
+                                <td th:text="${organization.fullName}"></td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
+    <script type="text/javascript" th:src="@{/js/menu.js}"></script>
 </body>
 </html>
